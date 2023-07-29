@@ -1,2 +1,17 @@
-package hello.core.discount;public class RateDiscountPolicy {
+package hello.core.discount;
+
+import hello.core.member.*;
+
+public class RateDiscountPolicy implements DiscountPolicy{
+
+    private int discountPercent = 10;
+
+    @Override
+    public int discount(Member member, int price) {
+        if (member.getGrade() == Grade.VIP) {
+            return (int) (price * 0.1);
+        } else {
+            return 0;
+        }
+    }
 }
