@@ -1,0 +1,7 @@
+1. 자동완성 + 세미콜론 : c + s + enter
+2. test 자동 완성 : c + s + t
+3. history : c + e
+4. 바로 전 페이지로 가기 : c + e + enter
+5. 반복문 자동완성 :  iter + tab
+6. 자동 변수 생성 및 대입 : c + a + v
+7. 변수명 프린트 : soutv
