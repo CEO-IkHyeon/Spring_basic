@@ -38,3 +38,4 @@ public class AppConfig {
 /*
 * 생각해보면 memberService, orderService 각각 1번씩 memberRepository 3번 호출될 것 같다
 * 하지만 현실은 각 메서드는 한번씩만 호출된다 = spring은 singleton을 보장해준다*/
+

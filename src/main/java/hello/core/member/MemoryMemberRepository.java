@@ -1,8 +1,11 @@
 package hello.core.member;
 
+import org.springframework.stereotype.Component;
+
 import java.util.HashMap;
 import java.util.Map;
 
+@Component
 public class MemoryMemberRepository implements MemberRepository{
 
     private static Map<Long, Member> store = new HashMap<>();               // Member 객체를 저장하고 검색하는 메모리 기반 저장소 역할 -> 실제 DB 대신 테스트용으로 활용

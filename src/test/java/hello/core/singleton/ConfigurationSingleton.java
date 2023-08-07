@@ -28,4 +28,16 @@ public class ConfigurationSingleton {
         Assertions.assertThat(memberService.getMemberRepository()).isSameAs(orderService.getMemberRepository());
         Assertions.assertThat(memberService.getMemberRepository()).isSameAs(memberRepository);
     }
+
+    @Test
+    void configurationDeep() {
+        AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
+        AppConfig bean = ac.getBean(AppConfig.class);
+
+        System.out.println("bean = " + bean.getClass());
+        // 결과 : bean = class hello.core.AppConfig$$EnhancerBySpringCGLIB$$79ac9512 -> 내가 등록한 AppConfig가 아닌 임의의 다른 class가 singleton이 보장되도록 해줌
+
+    }
+
+
 }

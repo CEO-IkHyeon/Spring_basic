@@ -6,7 +6,10 @@ import hello.core.discount.RateDiscountPolicy;
 import hello.core.member.Member;
 import hello.core.member.MemberRepository;
 import hello.core.member.MemoryMemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class OrderServiceImpl implements OrderService{
     //private final MemberRepository memberRepository = new MemoryMemberRepository();         // 1. member 찾아야됨
     //private final DiscountPolicy discountPolicy = new FixDiscountPolicy();                // 2. 할인정보 알아야함
@@ -30,7 +33,7 @@ public class OrderServiceImpl implements OrderService{
     // 이렇게 실행하면 NullPointerException 발생하지만 DIP는 준수
     // 해결방안 : 누군가 client인 'OrderServiceImpl'에 'DiscountPolicy'의 구현 객체를 대신 생성해 주입하면 된다
 
-    //
+    @Autowired
     public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;   // 'MemoryMemberRepository' 주입
         this.discountPolicy = discountPolicy;       // 'FixDiscountPolicy' 주입
