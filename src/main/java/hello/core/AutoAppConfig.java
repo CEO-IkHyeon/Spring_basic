@@ -18,9 +18,9 @@ import org.springframework.context.annotation.FilterType;
 // basePackage 지정안하면 (default) -> 1 line의 package hello.core; 부터 시작해서 하위 패키지를 뒤진다
 public class AutoAppConfig {
 
-    @Bean(name = "memoryMemberRepository")
+    /*@Bean(name = "memoryMemberRepository")
     MemberRepository memberRepository() {
         return new MemoryMemberRepository();
-    }
+    }*/
 
 }
